@@ -1,44 +1,50 @@
-class A
-{
-    int i,j;
-    void show()
-    {
-        System.out.print("Memory allocated to i & j in parent class"+"\n");
-    }
+class A{
+	int i,j;
+	void show()
+	{
+		System.out.println("As Show");
+	}	
 }
-
-class B extends A
-{
-    int k;
-    void show()
-    {
-        System.out.print("Memory allocated to K from child class along with i & j from parent class"+"\n");
-    }
+class B extends A{
+	int k;
+	void show()
+	{
+		System.out.println("Bs Show");
+	}	
 }
-
-class C extends A
-{
-    int l;
-    void show()
-    {
-        System.out.print("Memory allocated to l from child class along with i & j from parent class"+"\n");
-    }
+class C extends A{
+	void show()
+	{
+		System.out.println("Cs Show");
+	}	
 }
-
 class MainDemoPoly
 {
-    public static void main(String args[])
-    {
-        A aa=new A();
-        B bb=new B();
-        C cc=new C();
-        
-        aa.show();
-        bb.show();
-        cc.show();
+	public static void main(String[] arg)
+	{
+		A aa=new A();
+		B bb=new B();
+		C cc=new C();
+		aa.show();
+		bb.show();
+		cc.show();
+		A ref;
+		ref=new A();
+		ref.show();
 
-        A ref;
-        ref=new B();
-        ref.show();
-    }
+		ref=new B();//ref=bb;
+		ref.show();
+System.out.print("ref.i:"+ref.i+"ref.j:"+ref.j+"ref.k:"+ref.k);
+		ref=new C();
+		ref.show();
+
+
+
+
+
+
+
+	}
+
 }
+
